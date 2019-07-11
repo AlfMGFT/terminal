@@ -8,56 +8,37 @@
       this.speed = speed;
       this.fuelType = fuelType;
     }
-
     toSpeed() {
       console.log(`${this.name} speeds to ${this.speed} km/h.`);
-
     }
-
-
-
   }
 
   class Taxi extends Vehiculos {
 
   }
-  let taxis = [
+  class Avion extends Vehiculos {
+    toFly() {
+      console.log("Flugzeug")
+      //console.log(`${this.name} flys, because it has ${this.wheel} km/h.`);
+    }
+  }
+  class Bicycle extends Vehiculos {
+
+  }
+
+  let vehiculos = [
     new Taxi('Uber', "ground", 4, 100, "oil"),
     new Taxi('Cabyfy', "ground", 4, 200, "oil"),
     new Taxi('Public', "ground", 4, 300, "oil"),
-  ]
-
-  console.log(taxis)
-  console.log(taxis[0].toSpeed())
-  console.log(taxis[1].toSpeed())
-  console.log(taxis[2].toSpeed())
-
-  class Avion extends Vehiculos {
-
-  }
-  let aviones = [
+    new Bicycle('Bennotto', "ground", 0, 10, "oil"),
     new Avion('Aeromexico', "ground", 0, 1100, "oil"),
     new Avion('Interjet', "ground", 0, 2200, "oil"),
     new Avion('Volaris', "ground", 0, 3300, "oil"),
   ]
 
-  console.log(aviones)
-  console.log(aviones[0].toSpeed())
-  console.log(aviones[1].toSpeed())
-  console.log(aviones[2].toSpeed())
+  vehiculos.forEach((item, index, arr) => {
+    console.log(item.toSpeed())
 
-  class Bicycle extends Vehiculos {
-
-  }
-  let bicicletas = [
-    new Bicycle('Bennotto', "ground", 0, 10, "oil"),
-    new Bicycle('Shimano', "ground", 0, 20, "oil"),
-    new Bicycle('Ecobici', "ground", 0, 30, "oil"),
-  ]
-
-  console.log(bicicletas)
-  console.log(bicicletas[0].toSpeed())
-  console.log(bicicletas[1].toSpeed())
-  console.log(bicicletas[2].toSpeed())
+  })
 
 </script>
