@@ -18,8 +18,8 @@
   }
   class Avion extends Vehiculos {
     toFly() {
-      console.log("Flugzeug")
-      //console.log(`${this.name} flys, because it has ${this.wheel} km/h.`);
+      //console.log("Flugzeug")
+      console.log(`${this.name} flys, because it has ${this.wheel} wheels.`);
     }
   }
   class Bicycle extends Vehiculos {
@@ -40,5 +40,7 @@
     console.log(item.toSpeed())
 
   })
+
+  console.log(vehiculos[4].toFly())
 
 </script>
