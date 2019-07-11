@@ -14,33 +14,40 @@
   }
 
   class Taxi extends Vehiculos {
+    directAddress() {
+      console.log(`${this.name}, the passenger must indicate the address`)
+    }
 
   }
   class Avion extends Vehiculos {
     toFly() {
-      //console.log("Flugzeug")
+      //console.log('Flugzeug')
       console.log(`${this.name} flys, because it has ${this.wheel} wheels.`);
     }
   }
   class Bicycle extends Vehiculos {
-
+    toEnjoy() {
+      console.log(`I enjoy my ${this.name}`);
+    }
   }
 
   let vehiculos = [
-    new Taxi('Uber', "ground", 4, 100, "oil"),
-    new Taxi('Cabyfy', "ground", 4, 200, "oil"),
-    new Taxi('Public', "ground", 4, 300, "oil"),
-    new Bicycle('Bennotto', "ground", 0, 10, "oil"),
-    new Avion('Aeromexico', "ground", 0, 1100, "oil"),
-    new Avion('Interjet', "ground", 0, 2200, "oil"),
-    new Avion('Volaris', "ground", 0, 3300, "oil"),
+    new Taxi('Uber', 'ground', 4, 100, 'oil'),
+    new Taxi('Cabyfy', 'ground', 4, 200, 'oil'),
+    new Taxi('Public', 'ground', 4, 300, 'oil'),
+    new Bicycle('Bennotto', 'ground', 2, 10, 'mechanic'),
+    new Avion('Aeromexico', 'air', 0, 1100, 'oil'),
+    new Avion('Interjet', 'air', 0, 2200, 'oil'),
+    new Avion('Volaris', 'air', 0, 3300, 'oil'),
   ]
 
-  vehiculos.forEach((item, index, arr) => {
+  vehiculos.forEach((item, index) => {
     console.log(item.toSpeed())
 
   })
 
   console.log(vehiculos[4].toFly())
+  console.log(vehiculos[1].directAddress())
+  console.log(vehiculos[3].toEnjoy())
 
 </script>
