@@ -51,6 +51,13 @@
 
   vehiculos.forEach((item, index) => {
     console.log(item.toSpeed())
+    if(item instanceof Taxi){
+      console.log(`${item.name} is a Taxi`)
+    }else if(item instanceof Bicycle){
+      console.log(`${item.name} is a Bicycle`)
+    }else if(item instanceof Avion){
+      console.log(`${item.name} is a Avion`)
+    }
   })
 
   console.log(`${vehiculos[0].name} is cheap, it cost $ ${vehiculos[0].cost}`)
