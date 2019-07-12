@@ -1,15 +1,21 @@
 <script>
 
   class Vehiculos {
-    constructor(name, type, wheel, speed, fuelType) {
+    constructor(name, type, wheel, speed, fuelType, cost) {
       this.name = name;
       this.type = type;
       this.wheel = wheel;
       this.speed = speed;
       this.fuelType = fuelType;
+      this.cost = cost;
     }
     toSpeed() {
       console.log(`${this.name} speeds to ${this.speed} km/h.`);
+    }
+
+    static toCompareCost(vehiculoA, vehiculoB) {
+      return vehiculoA.cost - vehiculoB.cost
+      
     }
   }
 
@@ -31,23 +37,27 @@
     }
   }
 
-  let vehiculos = [
-    new Taxi('Uber', 'ground', 4, 100, 'oil'),
-    new Taxi('Cabyfy', 'ground', 4, 200, 'oil'),
-    new Taxi('Public', 'ground', 4, 300, 'oil'),
-    new Bicycle('Bennotto', 'ground', 2, 10, 'mechanic'),
-    new Avion('Aeromexico', 'air', 0, 1100, 'oil'),
-    new Avion('Interjet', 'air', 0, 2200, 'oil'),
-    new Avion('Volaris', 'air', 0, 3300, 'oil'),
+  var vehiculos = [
+    new Taxi('Uber', 'ground', 4, 100, 'oil', 110),
+    new Taxi('Cabyfy', 'ground', 4, 200, 'oil',100),
+    new Taxi('Public Taxi', 'ground', 4, 300, 'oil',120),
+    new Bicycle('Bennotto', 'ground', 2, 10, 'mechanic', 0),
+    new Avion('Aeromexico', 'air', 0, 1100, 'oil',2500),
+    new Avion('Interjet', 'air', 0, 2200, 'oil',2600),
+    new Avion('Volaris', 'air', 0, 3300, 'oil',2700),
   ]
+  
+  vehiculos.sort(Vehiculos.toCompareCost)
 
   vehiculos.forEach((item, index) => {
     console.log(item.toSpeed())
-
   })
 
+  console.log(`${vehiculos[0].name} is cheap, it cost $ ${vehiculos[0].cost}`)
   console.log(vehiculos[4].toFly())
   console.log(vehiculos[1].directAddress())
-  console.log(vehiculos[3].toEnjoy())
+
+
+
 
 </script>
